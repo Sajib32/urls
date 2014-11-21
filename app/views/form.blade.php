@@ -6,6 +6,9 @@
 	</head>
 	<body>
 		<div id="container">
+			@if(Session::has('errors'))
+			<h3 class="error">{{$errors->first('link')}}</h3>
+			@endif
 			<h2>Uber-Shortener</h2>
 			{{Form::open(array('url'=>'/', 'method'=>'post'))}}
 
